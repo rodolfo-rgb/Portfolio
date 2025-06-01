@@ -43,7 +43,7 @@ const Hero = () => {
           <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
             Let's transform ideas into functional and engaging digital
             experiences. Connect with me and I'd be happy to explore various
-            opportunities.
+            opportunities
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
@@ -71,4 +71,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

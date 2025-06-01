@@ -1,9 +1,13 @@
 import Hero from "@/components/Hero";
+import Navigation from "@/components/Navigation";
+import Projects from "@/components/Projects";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-black">
+      <Navigation />
       <Hero />
+      <Projects />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
@@ -18,4 +22,3 @@ const Index = () => {
 };
 
 export default Index;
-

@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import Projects from "@/components/Projects";
+import About from "@/components/About";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Projects />
+      <About />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">

@@ -3,9 +3,9 @@ import { Badge } from "@/components/ui/badge";
 
 const About = () => {
   const skills = [
-    "JavaScript", "TypeScript", "React", "Vue.js", "Node.js", "Python",
-    "PostgreSQL", "MongoDB", "AWS", "Docker", "Git", "Figma",
-    "Tailwind CSS", "SASS", "REST APIs", "GraphQL"
+    "JavaScript", "TypeScript", "React", "Angular.js", "Node.js", "Python",
+    "Java", "SQL", "Google Cloud", "PHP", "C", "C#", "Git",
+    "Tailwind CSS", "HTML", "CSS"
   ];
 
   const experiences = [
@@ -31,7 +31,7 @@ const About = () => {
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             I'm passionate about software development, the CI/CD process, 
             and algorithmic problem-solving. I have experience in several programming languages, 
-            including Java, JavaScript, C, C++, and SQL. My passion for learning drives me to constantly explore and master new technologies and tools. 
+            including Java, JavaScript, C, C#, and SQL. My passion for learning drives me to constantly explore and master new technologies and tools. 
             If something sparks my interest, I'm always willing to dig deeper and learn more.
           </p>
         </div>

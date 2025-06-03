@@ -26,7 +26,7 @@ const Hero = () => {
     const container = document.getElementById("stars-container");
     if (!container) return;
 
-    const numStars = 80;
+    const numStars = 100;
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement("div");
       const size = Math.random() * 2 + 1;
@@ -36,7 +36,7 @@ const Hero = () => {
       star.style.left = `${Math.random() * 100}%`;
       star.style.top = `${Math.random() * 100}%`;
       star.style.opacity = `${Math.random() * 0.5 + 0.3}`;
-      star.style.animationDuration = `${Math.random() * 4 + 4}s`;
+      star.style.animationDuration = `${Math.random() * 7 + 7}s`;
       star.style.animationDelay = `${Math.random() * 4}s`;
       container.appendChild(star);
     }

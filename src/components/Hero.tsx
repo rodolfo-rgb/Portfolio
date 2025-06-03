@@ -16,10 +16,31 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSkillIndex((prevIndex) => (prevIndex + 1) % skills.length);
-    }, 2000); // Cambia cada 2 segundos
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [skills.length]);
+
+  // Star field effect
+  useEffect(() => {
+    const container = document.getElementById("stars-container");
+    if (!container) return;
+
+    const numStars = 80;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      const size = Math.random() * 2 + 1;
+      star.className = "absolute rounded-full bg-white animate-float-star";
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.opacity = `${Math.random() * 0.5 + 0.3}`;
+      star.style.animationDuration = `${Math.random() * 4 + 4}s`;
+      star.style.animationDelay = `${Math.random() * 4}s`;
+      container.appendChild(star);
+    }
+  }, []);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -27,8 +48,11 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-slate-900 to-black text-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+      {/* Floating stars background */}
+      <div id="stars-container" className="absolute inset-0 z-0"></div>
+
+      {/* Background pattern (optional) */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10 z-0"></div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
@@ -40,11 +64,7 @@ const Hero = () => {
               {skills[currentSkillIndex]}
             </span>
           </p>
-          <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-            Let's transform ideas into functional and engaging digital
-            experiences. Connect with me and I'd be happy to explore various
-            opportunities
-          </p>
+          <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto"></p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={scrollToProjects}
@@ -63,7 +83,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
+
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <ArrowDown className="w-6 h-6 text-gray-300" />
       </div>
     </section>

@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Education from "@/components/Education";
+import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Projects />
       <About />
       <Education />
+      <Contact />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">

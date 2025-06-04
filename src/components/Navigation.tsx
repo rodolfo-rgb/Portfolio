@@ -58,7 +58,7 @@ const Navigation = () => {
                 isScrolled ? "text-gray-200" : "text-white"
               }`}
             >
-              education
+              Education
             </button>
             <button
               onClick={() => scrollToSection("contact")}

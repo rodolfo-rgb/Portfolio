@@ -21,12 +21,12 @@ const Projects = () => {
       githubUrl: "https://github.com/rodolfo-rgb/Rodolfo.Dots"
     },
     {
-      title: "Future Project",
-      description: "Here I will upload a future project",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
+      title: "Atlantic Books",
+      description: "Web application for managing and viewing online books",
+      image: "/AtlanticBooks.PNG",
       technologies: [],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/rodolfo-rgb/AtlanticBooks"
     },
     {
       title: "Future Project",

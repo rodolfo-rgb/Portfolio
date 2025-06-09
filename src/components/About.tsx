@@ -5,7 +5,7 @@ const About = () => {
   const skills = [
     "JavaScript", "TypeScript", "React", "Angular.js", "Node.js", "Python",
     "Java", "SQL", "Google Cloud", "PHP", "C", "C#", "Git",
-    "Tailwind CSS", "HTML", "CSS"
+    "Tailwind CSS", "HTML", "CSS", "Electron", "Supabase", "Neovim", "WSL", "Shell Scripting"
   ];
 
   const experiences = [

@@ -8,9 +8,10 @@ const Projects = () => {
       title: "BolsiVibe",
       description: "An application designed to help users manage their personal finances efficiently and effectively.",
       image: "/BolsiVibe-project.jpg",
-      technologies: ["React/Typescript", "Node.js", "Tailwind", "Supabase"],
+      technologies: ["React/Typescript", "Node.js", "Tailwind", "Supabase", "Electron"],
       liveUrl: "#",
-      githubUrl: "https://github.com/rodolfo-rgb/BolsiVibe-project"
+      githubUrl: "https://github.com/rodolfo-rgb/BolsiVibe-project",
+      downloadUrl: "https://drive.google.com/file/d/1ddGvzPhpB8dJOhmatjzToVAGiHzOw4oC/view?usp=drive_link"
     },
     {
       title: "Rodolfo.Dots",
@@ -24,17 +25,9 @@ const Projects = () => {
       title: "Atlantic Books",
       description: "Web application for managing and viewing online books",
       image: "/AtlanticBooks.PNG",
-      technologies: [],
+      technologies: ["PHP", "HTML", "CSS", "JavaScript", "MySQL"],
       liveUrl: "#",
       githubUrl: "https://github.com/rodolfo-rgb/AtlanticBooks"
-    },
-    {
-      title: "Future Project",
-      description: "Here I will upload a future project",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
-      technologies: [],
-      liveUrl: "#",
-      githubUrl: "#"
     }
   ];
 
@@ -55,7 +48,7 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                 className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -74,25 +67,15 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                  {index === 0 ? (
+                  {index === 0 && project.downloadUrl ? (
                     <Button 
                       variant="outline" 
                       size="sm" 
                       className="flex items-center justify-center gap-2 border-gray-600 text-gray-200 hover:bg-gray-700 w-full sm:w-auto"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
+                      onClick={() => window.open(project.downloadUrl, '_blank')}
                     >
                       <Download className="w-4 h-4" />
                       <span className="text-sm">Download</span>
-                    </Button>
-                  ) : index !== 1 ? (
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex items-center justify-center gap-2 border-gray-600 text-gray-200 hover:bg-gray-700 w-full sm:w-auto"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">Live Demo</span>
                     </Button>
                   ) : null}
                   <Button 
@@ -113,4 +96,5 @@ const Projects = () => {
     </section>
   );
 };
+
 export default Projects;

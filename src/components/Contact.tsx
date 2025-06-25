@@ -1,10 +1,22 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Linkedin, Github, Instagram } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Github,
+  Instagram,
+} from "lucide-react";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -14,16 +26,24 @@ const Contact = () => {
 
     if (!formRef.current) return;
 
+    const form = formRef.current;
+    const templateParams = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
+
     emailjs
-      .sendForm(
-        "service_soeg9kh",
-        "template_h5o4h0c",
-        formRef.current,
-        "P-x9o59hmqphPO8ET"
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
       )
       .then(() => {
         alert("Message sent successfully!");
-        formRef.current?.reset();
+        form.reset();
       })
       .catch((error) => {
         console.error("Failed to send message:", error);
@@ -53,7 +73,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-gray-300">rodo.aparicio.lopez@gmail.com</p>
+                  <p className="text-gray-300">
+                    rodo.aparicio.lopez@gmail.com
+                  </p>
                 </div>
               </div>
 
@@ -125,7 +147,11 @@ const Contact = () => {
                 <CardTitle className="text-white">Send Message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input
                       name="name"

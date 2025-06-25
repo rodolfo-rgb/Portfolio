@@ -28,6 +28,22 @@ const Projects = () => {
       technologies: ["PHP", "HTML", "CSS", "JavaScript", "MySQL"],
       liveUrl: "#",
       githubUrl: "https://github.com/rodolfo-rgb/AtlanticBooks"
+    },
+    {
+      title: "Metodos de Optimizacion",
+      description: "This repository brings together a collection of classic optimization methods implemented in a simple and educational way.",
+      image: "/Metodos_opt.PNG",
+      technologies: ["React", "Typescript", "Tailwind", "Vite"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/rodolfo-rgb/Metodos_Optimizacion.git"
+    },
+    {
+      title: "Corazones Solidarios",
+      description: "website developed with the purpose of connecting people willing to help with those who need it most.",
+      image: "/CorazonesSolidarios.PNG",
+      technologies: ["React", "Typescript", "Tailwind", "EmailJS", "Vite"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/rodolfo-rgb/Corazones-Solidarios.git"
     }
   ];
 

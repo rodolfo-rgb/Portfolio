@@ -28,10 +28,10 @@ const Contact = () => {
 
     const form = formRef.current;
     const templateParams = {
-      name: form.name.value,
-      email: form.email.value,
-      subject: form.subject.value,
-      message: form.message.value,
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+      email: (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
+      subject: (form.elements.namedItem("subject") as HTMLInputElement)?.value || "",
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "",
     };
 
     emailjs

@@ -73,7 +73,7 @@ const Hero = () => {
             >
               View My Work
             </Button>
-            <a href="/CVRodolfoAparicio.pdf">
+            <a href="/CV_AparicioLopezRodolfo.pdf">
               <Button
                 variant="outline"
                 size="lg"
